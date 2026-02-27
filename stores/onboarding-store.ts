@@ -5,7 +5,7 @@ export type MenteeData = {
   university: string;
   year_of_study: string;
   current_firm: string;
-  current_role: string;
+  job_title: string;
   target_role: string;
   target_division: string;
   goals: string;
@@ -36,7 +36,7 @@ const defaultMentee: MenteeData = {
   university: "",
   year_of_study: "",
   current_firm: "",
-  current_role: "",
+  job_title: "",
   target_role: "",
   target_division: "",
   goals: "",

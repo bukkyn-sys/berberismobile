@@ -40,7 +40,7 @@ create table public.profiles (
   user_id uuid references public.users(id) on delete cascade primary key,
   career_stage career_stage,
   current_firm text,
-  current_role text,
+  job_title text,
   target_role text,
   target_division text,
   university text,

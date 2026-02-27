@@ -32,7 +32,7 @@ export type Database = {
           user_id: string;
           career_stage: CareerStage | null;
           current_firm: string | null;
-          current_role: string | null;
+          job_title: string | null;
           target_role: string | null;
           target_division: string | null;
           university: string | null;

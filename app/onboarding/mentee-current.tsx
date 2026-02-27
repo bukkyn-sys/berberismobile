@@ -30,8 +30,8 @@ export default function MenteeCurrentScreen() {
                 className="bg-dark-card border border-dark-border rounded-xl px-4 py-3.5 text-white"
                 placeholder="e.g. Analyst, IB Coverage"
                 placeholderTextColor="#4B5563"
-                value={mentee.current_role}
-                onChangeText={(v) => setMentee({ current_role: v })}
+                value={mentee.job_title}
+                onChangeText={(v) => setMentee({ job_title: v })}
               />
             </View>
           </View>

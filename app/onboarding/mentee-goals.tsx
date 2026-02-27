@@ -19,7 +19,7 @@ export default function MenteeGoalsScreen() {
         university: mentee.university || null,
         year_of_study: mentee.year_of_study ? parseInt(mentee.year_of_study) : null,
         current_firm: mentee.current_firm || null,
-        current_role: mentee.current_role || null,
+        job_title: mentee.job_title || null,
         target_role: mentee.target_role || null,
         target_division: mentee.target_division || null,
         goals: mentee.goals || null,
