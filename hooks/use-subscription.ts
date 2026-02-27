@@ -34,5 +34,7 @@ export function useSubscription() {
     isStandard: (tier === "standard" || tier === "ultra") && isActive,
     isUltra: tier === "ultra" && isActive,
     isPaid: (tier === "standard" || tier === "ultra") && isActive,
+    isStudent: subscription?.is_student ?? false,
+    isFounding: subscription?.is_founding ?? false,
   };
 }
