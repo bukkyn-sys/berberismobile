@@ -395,3 +395,20 @@ $$;
 create trigger after_mentor_rating_insert
   after insert on public.mentor_ratings
   for each row execute procedure public.update_mentor_rating();
+
+-- ============================================================
+-- FOUNDING CODES TABLE
+-- ============================================================
+-- Run separately if schema was already applied without this table
+
+create table if not exists public.founding_codes (
+  code text primary key,
+  used boolean not null default false,
+  used_by uuid references public.users(id),
+  created_at timestamptz not null default now()
+);
+
+alter table public.founding_codes enable row level security;
+
+-- Only the Edge Function (service role) can read/write founding_codes
+-- No user-facing RLS policies needed; all access via service role key
