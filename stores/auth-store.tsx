@@ -2,6 +2,7 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import { router } from "expo-router";
 import type { Session, User } from "@supabase/supabase-js";
 import { supabase } from "@/lib/supabase/client";
+import { registerForPushNotifications } from "@/lib/notifications";
 
 type AuthContextType = {
   session: Session | null;
@@ -40,6 +41,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (loading) return;
     if (!session) {
       router.replace("/(auth)/sign-in");
+    } else {
+      // Register for push notifications once authenticated
+      registerForPushNotifications(session.user.id).catch(console.warn);
     }
   }, [session, loading]);
 
